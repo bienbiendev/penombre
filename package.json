@@ -1,7 +1,7 @@
 {
-	"name": "sunglass",
-	"displayName": "Sunglass",
-	"description": "Low-glare dark and light themes on the GitHub color range",
+	"name": "penombre",
+	"displayName": "Pénombre",
+	"description": "Half-light themes: slate and paper, on the GitHub color range",
 	"version": "0.1.0",
 	"publisher": "bienoubien-studio",
 	"license": "MIT",
@@ -14,14 +14,14 @@
 	"contributes": {
 		"themes": [
 			{
-				"label": "Sunglass Dark",
+				"label": "Pénombre Ardoise",
 				"uiTheme": "vs-dark",
-				"path": "./themes/sunglass-dark.json"
+				"path": "./themes/penombre-ardoise.json"
 			},
 			{
-				"label": "Sunglass Light",
+				"label": "Pénombre Papier",
 				"uiTheme": "vs",
-				"path": "./themes/sunglass-light.json"
+				"path": "./themes/penombre-papier.json"
 			}
 		]
 	},
@@ -29,6 +29,6 @@
 		"build": "node src/build.js",
 		"watch": "node --watch-path=src --watch-path=blueprint src/build.js",
 		"preview": "code --extensionDevelopmentPath=$PWD $PWD/preview",
-		"install-local": "node src/build.js && bunx @vscode/vsce@3 package --allow-missing-repository --skip-license -o sunglass.vsix && code --install-extension sunglass.vsix --force"
+		"install-local": "node src/build.js && bunx @vscode/vsce@3 package --allow-missing-repository --skip-license -o penombre.vsix && code --install-extension penombre.vsix --force"
 	}
 }

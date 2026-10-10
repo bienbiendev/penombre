@@ -1,4 +1,4 @@
-# Sunglass
+# Pénombre
 
 A **low-glare** theme with _calm_ syntax. See [the palette](../src/palette.js).
 

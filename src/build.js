@@ -1,4 +1,5 @@
-// Builds themes/sunglass-{dark,light}.json from the two blueprints.
+// Builds themes/penombre-{ardoise,papier}.json from the two blueprints.
+// dark -> "Pénombre Ardoise" in penombre-ardoise.json
 // role "keyword" -> "oklch(0.74 0.045 blue)" in dark -> "#9fb2c9"
 const fs = require('node:fs')
 const path = require('node:path')
@@ -9,6 +10,8 @@ const { oklch } = require('./oklch')
 const root = path.join(__dirname, '..')
 const syntax = require('../blueprint/syntax.json')
 const ui = require('../blueprint/ui.json')
+
+const variant = { dark: 'Ardoise', light: 'Papier' }
 
 // "accent.selection/40" -> the role's ref with 40% alpha. A non-role value is a palette ref.
 function color(mode, roles, value) {
@@ -79,13 +82,13 @@ function report(mode, theme) {
 for (const mode of ['dark', 'light']) {
 	const theme = {
 		$schema: 'vscode://schemas/color-theme',
-		name: `Sunglass ${mode === 'dark' ? 'Dark' : 'Light'}`,
+		name: `Pénombre ${variant[mode]}`,
 		type: mode,
 		semanticHighlighting: true,
 		colors: colors(mode),
 		tokenColors: tokenColors(mode),
 		semanticTokenColors: semanticTokenColors(mode)
 	}
-	fs.writeFileSync(path.join(root, 'themes', `sunglass-${mode}.json`), JSON.stringify(theme, null, '\t') + '\n')
+	fs.writeFileSync(path.join(root, 'themes', `penombre-${variant[mode].toLowerCase()}.json`), JSON.stringify(theme, null, '\t') + '\n')
 	report(mode, theme)
 }

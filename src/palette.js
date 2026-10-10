@@ -54,7 +54,7 @@ function hue(mode, family, l) {
 
 // "blue.2" -> "#79c0ff", "blue.2/40" -> "#79c0ff66", "#123456" passes through.
 // "oklch(0.78 0.06 purple)" -> purple's hue at that lightness and chroma.
-// "soft(red.3)" -> red.3 at a softer contrast on the Sunglass background (see soften.js).
+// "soft(red.3)" -> red.3 at a softer contrast on the Pénombre background (see soften.js).
 // "soft(pink.3 0.11 8)" -> pink.3's contrast, with chroma 0.11 and hue 8.
 // "background" -> the editor background.
 function resolve(mode, ref) {

@@ -1,6 +1,6 @@
 {
 	"$schema": "vscode://schemas/color-theme",
-	"name": "Sunglass Dark",
+	"name": "Pénombre Ardoise",
 	"type": "dark",
 	"semanticHighlighting": true,
 	"colors": {

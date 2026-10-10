@@ -1,6 +1,6 @@
-# Sunglass — color audit
+# Pénombre — color audit
 
-Sunglass keeps the GitHub (Primer) color range and reassigns it. Contrast peaks go only where the
+Pénombre keeps the GitHub (Primer) color range and reassigns it. Contrast peaks go only where the
 reader must look; everything else stays readable and quiet.
 
 ## Importance scale
@@ -96,7 +96,7 @@ The added color is `stone` (H ≈ 90): paper in light mode, concrete in dark mod
 ## GitHub in OKLCH, softened
 
 Each GitHub Default color keeps its hue and chroma. Its lightness moves until its contrast on the
-Sunglass background equals GitHub's ratio, softened (`src/soften.js`):
+Pénombre background equals GitHub's ratio, softened (`src/soften.js`):
 
 ```
 target = github ratio ** soften      dark 0.85, light 0.92

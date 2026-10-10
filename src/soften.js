@@ -1,4 +1,4 @@
-// Sunglass is GitHub Default in OKLCH, on a slate (dark) or paper (light) background, with softer contrast.
+// Pénombre is GitHub Default in OKLCH, on a slate (dark) or paper (light) background, with softer contrast.
 // A GitHub color keeps its hue; its chroma is scaled by `chroma`; its contrast on the editor becomes GitHub's ratio ** soften.
 // dark fg: 16:1 on #0d1117 -> 16 ** 0.85 = 10.6:1 on slate
 // Ratios at or above `floor` never drop below it; ratios under it stay as they are.
