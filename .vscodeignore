@@ -1,0 +1,5 @@
+blueprint/**
+preview/**
+src/**
+AUDIT.md
+*.vsix

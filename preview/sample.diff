@@ -1,0 +1,5 @@
+diff --git a/src/resolver.ts b/src/resolver.ts
+@@ -12,7 +12,7 @@ export class Resolver {
+-	const MAX_DEPTH = 2
++	const MAX_DEPTH = 3
+ 	const pattern = /^[a-z]+$/
