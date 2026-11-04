@@ -12,3 +12,4 @@ bun.lock
 .changeset/**
 node_modules/**
 .github/**
+README.md

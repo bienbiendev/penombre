@@ -35,7 +35,7 @@
     "build": "node src/build.js",
     "watch": "node --watch-path=src --watch-path=blueprint --watch-path=colors src/build.js",
     "preview": "code --extensionDevelopmentPath=$PWD $PWD/preview",
-    "install-local": "bunx @vscode/vsce@4.1.0 package --no-dependencies -o penombre.vsix && code --install-extension penombre.vsix --force",
+    "install-local": "bunx @vscode/vsce@4.1.0 package --no-dependencies --readme-path docs/MARKETPLACE.md -o penombre.vsix && code --install-extension penombre.vsix --force",
     "format": "prettier --write ."
   },
   "devDependencies": {

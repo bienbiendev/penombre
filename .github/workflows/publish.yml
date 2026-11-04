@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: 22
       - name: Package
-        run: npx --yes @vscode/vsce@4.1.0 package --no-dependencies -o "penombre-${TAG#v}.vsix"
+        run: npx --yes @vscode/vsce@4.1.0 package --no-dependencies --readme-path docs/MARKETPLACE.md -o "penombre-${TAG#v}.vsix"
       - name: Publish to the Marketplace
         run: npx --yes @vscode/vsce@4.1.0 publish --oidc --no-dependencies --packagePath "penombre-${TAG#v}.vsix"
       - name: Attach to the GitHub release
