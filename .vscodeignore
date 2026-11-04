@@ -1,5 +1,9 @@
 blueprint/**
 preview/**
 src/**
-AUDIT.md
+docs/**
 *.vsix
+.prettierrc
+.prettierignore
+bun.lock
+.gitignore

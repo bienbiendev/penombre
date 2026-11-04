@@ -29,7 +29,7 @@
     "build": "node src/build.js",
     "watch": "node --watch-path=src --watch-path=blueprint src/build.js",
     "preview": "code --extensionDevelopmentPath=$PWD $PWD/preview",
-    "install-local": "node src/build.js && bunx @vscode/vsce@3 package --allow-missing-repository --skip-license -o penombre.vsix && code --install-extension penombre.vsix --force",
+    "install-local": "node src/build.js && bunx @vscode/vsce@3 package --allow-missing-repository --no-rewrite-relative-links --skip-license -o penombre.vsix && code --install-extension penombre.vsix --force",
     "format": "prettier --write ."
   },
   "devDependencies": {
