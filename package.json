@@ -5,6 +5,10 @@
   "version": "0.1.0",
   "publisher": "bienoubien-studio",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bienbiendev/penombre.git"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -29,7 +33,7 @@
     "build": "node src/build.js",
     "watch": "node --watch-path=src --watch-path=blueprint --watch-path=colors src/build.js",
     "preview": "code --extensionDevelopmentPath=$PWD $PWD/preview",
-    "install-local": "node src/build.js && bunx @vscode/vsce@3 package --allow-missing-repository --no-rewrite-relative-links --skip-license -o penombre.vsix && code --install-extension penombre.vsix --force",
+    "install-local": "node src/build.js && bunx @vscode/vsce@3 package --skip-license -o penombre.vsix && code --install-extension penombre.vsix --force",
     "format": "prettier --write ."
   },
   "devDependencies": {
