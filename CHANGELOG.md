@@ -1,5 +1,11 @@
 # penombre
 
+## 0.2.2
+
+### Patch Changes
+
+- 5047f11: Update icon to a transparent version
+
 ## 0.2.1
 
 ### Patch Changes
