@@ -1,5 +1,5 @@
 # Publishes a GitHub release to the VS Code Marketplace, then attaches the .vsix to the release.
-# Runs when .auto/@release.sh creates the release. Run it by hand from the Actions tab to retry.
+# Runs when a release is published. Run it by hand from the Actions tab to retry.
 # Signs in with Marketplace trusted publishing: no token, the policy on the publisher allows
 # this repository and this file name.
 name: Publish

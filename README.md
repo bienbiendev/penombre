@@ -20,8 +20,8 @@ Design notes: [docs/AUDIT.md](docs/AUDIT.md).
 
 ## Release
 
-Describe each change with `bunx changeset`. `.auto/@release.sh` then writes `CHANGELOG.md`, tags
-the version and creates the GitHub release, which publishes to the VS Code Marketplace.
+Describe each change with `bunx changeset`. Each GitHub release is published to the VS Code
+Marketplace by `.github/workflows/publish.yml`.
 
 ## License
 
