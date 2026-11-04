@@ -1,4 +1,4 @@
-# Pénombre
+# Penombre
 
 A **low-glare** theme with _calm_ syntax. See [the palette](../src/palette.js).
 
@@ -11,5 +11,5 @@ A **low-glare** theme with _calm_ syntax. See [the palette](../src/palette.js).
 > One meaning per hue.
 
 ```ts
-const answer = 42
+const answer = 42;
 ```

@@ -1,9 +1,9 @@
 :root {
-	--rz-size-4: 1rem;
-	--accent: #2f81f7;
+  --rz-size-4: 1rem;
+  --accent: #2f81f7;
 }
 
 .panel > .item:hover {
-	color: var(--accent);
-	padding: var(--rz-size-4) calc(2 * 1px);
+  color: var(--accent);
+  padding: var(--rz-size-4) calc(2 * 1px);
 }

@@ -1,7 +1,7 @@
-import { PARAMS } from "#lib/core/constants.js";
-import { API_PREFIX } from "#lib/core/routes/constants.js";
-import { toKebabCase } from "#lib/util/string.js";
-import type { Dic } from "#lib/util/types.js";
+import { PARAMS } from '#lib/core/constants.js';
+import { API_PREFIX } from '#lib/core/routes/constants.js';
+import { toKebabCase } from '#lib/util/string.js';
+import type { Dic } from '#lib/util/types.js';
 
 const cache = new Map<string, Promise<Dic | null>>();
 
@@ -15,14 +15,10 @@ const cache = new Map<string, Promise<Dic | null>>();
  * fetchDoc('blogPosts', 'p1', 'fr') // GET /api/blog-posts/p1?depth=1&locale=fr
  * ```
  */
-export function fetchDoc(
-  slug: string,
-  id: string,
-  locale?: string,
-): Promise<Dic | null> {
-  const key = `${slug}/${id}/${locale ?? ""}`;
+export function fetchDoc(slug: string, id: string, locale?: string): Promise<Dic | null> {
+  const key = `${slug}/${id}/${locale ?? ''}`;
   if (!cache.has(key)) {
-    const params = new URLSearchParams({ depth: "1" });
+    const params = new URLSearchParams({ depth: '1' });
     if (locale) {
       params.set(PARAMS.LOCALE, locale);
     }
@@ -35,7 +31,7 @@ export function fetchDoc(
         .catch((error) => {
           console.error(error);
           return null;
-        }),
+        })
     );
   }
   return cache.get(key)!;

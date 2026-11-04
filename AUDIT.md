@@ -1,6 +1,6 @@
-# Pénombre — color audit
+# Penombre — color audit
 
-Pénombre keeps the GitHub (Primer) color range and reassigns it. Contrast peaks go only where the
+Penombre keeps the GitHub (Primer) color range and reassigns it. Contrast peaks go only where the
 reader must look; everything else stays readable and quiet.
 
 ## Importance scale
@@ -28,12 +28,12 @@ Below the line nothing pulls the eye: grays for 1–2, calm hues for 3. Above it
 
 ## One meaning per hue
 
-| Hue    | Meaning everywhere           |
-| ------ | ---------------------------- |
-| red    | error, deletion, conflict    |
-| yellow | warning, find match          |
-| green  | added, success               |
-| blue   | focus, selection, active     |
+| Hue    | Meaning everywhere        |
+| ------ | ------------------------- |
+| red    | error, deletion, conflict |
+| yellow | warning, find match       |
+| green  | added, success            |
+| blue   | focus, selection, active  |
 
 ## Findings
 
@@ -71,32 +71,32 @@ Below the line nothing pulls the eye: grays for 1–2, calm hues for 3. Above it
 
 Eight landscape photos (Wikimedia Commons featured pictures), measured in OKLCH:
 
-| Observation                                                      | Applied as                                              |
-| ---------------------------------------------------------------- | ------------------------------------------------------- |
+| Observation                                                      | Applied as                                               |
+| ---------------------------------------------------------------- | -------------------------------------------------------- |
 | Neutrals cover most of the frame, chroma 0.003–0.03              | body text, punctuation and surfaces are neutral          |
 | Neutrals are tinted: warm ground (H 55–90), cool sky (H 230–270) | warm stone for code and surfaces, cool gray for comments |
 | Chroma peaks in mid-tones; bright and dark areas are near-gray   | dark mode tokens stay under C 0.10                       |
-| Colors are analogous earths with one cool counterpoint          | sand, terracotta, ochre against slate, river, moss       |
+| Colors are analogous earths with one cool counterpoint           | sand, terracotta, ochre against slate, river, moss       |
 | The most vivid colors cover the smallest areas                   | frequent tokens are quiet, rare ones carry chroma        |
 
 The added color is `stone` (H ≈ 90): paper in light mode, concrete in dark mode.
 
-| Role        | Image              | Hue family |
-| ----------- | ------------------ | ---------- |
-| variable    | limestone / ink    | stone      |
-| comment     | haze, graphite     | gray       |
-| keyword     | distant slate      | blue       |
-| string      | sand, dry grass    | yellow     |
-| constant    | terracotta         | coral      |
-| function    | glacial river      | cyan       |
-| type        | sage, moss         | green      |
-| property    | alpenglow          | pink       |
-| heading     | sunset ochre       | orange     |
+| Role     | Image           | Hue family |
+| -------- | --------------- | ---------- |
+| variable | limestone / ink | stone      |
+| comment  | haze, graphite  | gray       |
+| keyword  | distant slate   | blue       |
+| string   | sand, dry grass | yellow     |
+| constant | terracotta      | coral      |
+| function | glacial river   | cyan       |
+| type     | sage, moss      | green      |
+| property | alpenglow       | pink       |
+| heading  | sunset ochre    | orange     |
 
 ## GitHub in OKLCH, softened
 
 Each GitHub Default color keeps its hue and chroma. Its lightness moves until its contrast on the
-Pénombre background equals GitHub's ratio, softened (`src/soften.js`):
+Penombre background equals GitHub's ratio, softened (`src/soften.js`):
 
 ```
 target = github ratio ** soften      dark 0.85, light 0.92

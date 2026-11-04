@@ -1,34 +1,38 @@
 {
-	"name": "penombre",
-	"displayName": "Pénombre",
-	"description": "Half-light themes: slate and paper, on the GitHub color range",
-	"version": "0.1.0",
-	"publisher": "bienoubien-studio",
-	"license": "MIT",
-	"engines": {
-		"vscode": "^1.80.0"
-	},
-	"categories": [
-		"Themes"
-	],
-	"contributes": {
-		"themes": [
-			{
-				"label": "Pénombre Ardoise",
-				"uiTheme": "vs-dark",
-				"path": "./themes/penombre-ardoise.json"
-			},
-			{
-				"label": "Pénombre Papier",
-				"uiTheme": "vs",
-				"path": "./themes/penombre-papier.json"
-			}
-		]
-	},
-	"scripts": {
-		"build": "node src/build.js",
-		"watch": "node --watch-path=src --watch-path=blueprint src/build.js",
-		"preview": "code --extensionDevelopmentPath=$PWD $PWD/preview",
-		"install-local": "node src/build.js && bunx @vscode/vsce@3 package --allow-missing-repository --skip-license -o penombre.vsix && code --install-extension penombre.vsix --force"
-	}
+  "name": "penombre",
+  "displayName": "Penombre",
+  "description": "Half-light themes: slate and paper, on the GitHub color range",
+  "version": "0.1.0",
+  "publisher": "bienoubien-studio",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Penombre Ardoise",
+        "uiTheme": "vs-dark",
+        "path": "./themes/penombre-ardoise.json"
+      },
+      {
+        "label": "Penombre Papier",
+        "uiTheme": "vs",
+        "path": "./themes/penombre-papier.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node src/build.js",
+    "watch": "node --watch-path=src --watch-path=blueprint src/build.js",
+    "preview": "code --extensionDevelopmentPath=$PWD $PWD/preview",
+    "install-local": "node src/build.js && bunx @vscode/vsce@3 package --allow-missing-repository --skip-license -o penombre.vsix && code --install-extension penombre.vsix --force",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.9.9"
+  }
 }
