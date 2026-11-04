@@ -3,7 +3,8 @@
   "displayName": "Penombre",
   "description": "Half-light themes: slate and paper, on the GitHub color range",
   "version": "0.1.0",
-  "publisher": "bienoubien-studio",
+  "publisher": "bienoubien",
+  "icon": "icon.png",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -30,13 +31,15 @@
     ]
   },
   "scripts": {
+    "vscode:prepublish": "node src/build.js",
     "build": "node src/build.js",
     "watch": "node --watch-path=src --watch-path=blueprint --watch-path=colors src/build.js",
     "preview": "code --extensionDevelopmentPath=$PWD $PWD/preview",
-    "install-local": "node src/build.js && bunx @vscode/vsce@3 package --skip-license -o penombre.vsix && code --install-extension penombre.vsix --force",
+    "install-local": "bunx @vscode/vsce@4.1.0 package --no-dependencies -o penombre.vsix && code --install-extension penombre.vsix --force",
     "format": "prettier --write ."
   },
   "devDependencies": {
+    "@changesets/cli": "^3.0.3",
     "prettier": "^3.9.9"
   }
 }

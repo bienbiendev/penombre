@@ -8,3 +8,7 @@ docs/**
 .prettierignore
 bun.lock
 .gitignore
+.auto/**
+.changeset/**
+node_modules/**
+.github/**

@@ -1,0 +1,38 @@
+# Publishes a GitHub release to the VS Code Marketplace, then attaches the .vsix to the release.
+# Runs when .auto/@release.sh creates the release. Run it by hand from the Actions tab to retry.
+# Signs in with Marketplace trusted publishing: no token, the policy on the publisher allows
+# this repository and this file name.
+name: Publish
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to publish, like v0.2.0
+        required: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # upload the .vsix to the release
+      id-token: write # Marketplace trusted publishing
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ env.TAG }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Package
+        run: npx --yes @vscode/vsce@4.1.0 package --no-dependencies -o "penombre-${TAG#v}.vsix"
+      - name: Publish to the Marketplace
+        run: npx --yes @vscode/vsce@4.1.0 publish --oidc --no-dependencies --packagePath "penombre-${TAG#v}.vsix"
+      - name: Attach to the GitHub release
+        run: gh release upload "$TAG" "penombre-${TAG#v}.vsix" --clobber
+        env:
+          GH_TOKEN: ${{ github.token }}
