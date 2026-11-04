@@ -1,5 +1,11 @@
 # penombre
 
+## 0.2.3
+
+### Patch Changes
+
+- 3b29a9b: Lower icon size to fit VSCode markeplace rules
+
 ## 0.2.2
 
 ### Patch Changes
