@@ -1,187 +1,26 @@
 {
-  "findings": [
-    "Keywords and storage are error red (red.3 / red.5), the most frequent colored token, so red no longer means 'wrong' and invalid code blends in.",
-    "Tags, JSON keys, markdown quotes and regex escapes are green, which collides with added/success.",
-    "Body text is the brightest thing on the page (#e6edf3, 16:1 dark; #1f2328, 14.8:1 light), so plain identifiers glare and every colored token looks recessive.",
-    "No landmarks: declarations and uses share one color (entity.name.function, entity.name), and only markdown headings are bold.",
-    "Hue is spent on body text: `variable` is orange and `variable.other.constant` blue, so a const name changes color between declaration and use.",
-    "Blue is overloaded: strings, constants, support, property names, `this`, headings, inline code, diff headers and output all share it.",
-    "Light comments (gray.5) fall to 4.3:1 on the gray.0 background, and punctuation, operators and import plumbing get no rules at all, so they inherit full-strength body text.",
-    "Missing scopes: keyword.operator, punctuation, constant.numeric, entity.name.type, entity.other.attribute-name, variable.parameter (only .function), support.type.primitive; no semanticTokenColors."
-  ],
-  "added": null,
-  "roles": {
-    "variable": {
-      "importance": 2,
-      "dark": "soft(special.fg)",
-      "light": "soft(special.fg 0.012 75)",
-      "why": "Body text."
-    },
-    "operator": {
-      "importance": 2,
-      "dark": "soft(gray.2)",
-      "light": "soft(gray.7 0.012 75)",
-      "why": "Part of the sentence, a step under the body."
-    },
-    "punctuation": {
-      "importance": 1,
-      "dark": "soft(gray.3)",
-      "light": "soft(gray.6 0.012 75)",
-      "why": "Scaffolding: present, never read."
-    },
-    "comment": {
-      "importance": 2,
-      "dark": "soft(gray.3)",
-      "light": "oklch(0.56 0.016 75)",
-      "why": "Comments, set apart by italic.",
-      "fontStyle": "italic"
-    },
-    "keyword": {
-      "importance": 3,
-      "dark": "soft(pink.3 0.135 356)",
-      "light": "soft(red.5 0.18 24)",
-      "why": "Pink in dark, brick red on paper; error red stays alone."
-    },
-    "string": {
-      "importance": 3,
-      "dark": "soft(blue.1)",
-      "light": "soft(blue.8)",
-      "why": "Literal text: the calm blue."
-    },
-    "constant": {
-      "importance": 3,
-      "dark": "soft(blue.2)",
-      "light": "soft(blue.6)",
-      "why": "Literal values: the stronger blue."
-    },
-    "function": {
-      "importance": 3,
-      "dark": "soft(purple.2)",
-      "light": "soft(purple.5)",
-      "why": "Functions."
-    },
-    "functionDeclaration": {
-      "importance": 4,
-      "dark": "soft(purple.2)",
-      "light": "soft(purple.5)",
-      "why": "Landmark: where a function is defined.",
-      "fontStyle": "bold"
-    },
+  "fontStyles": {
+    "comment": "italic",
+    "function-declaration": "bold",
     "type": {
-      "importance": 3,
-      "dark": "soft(orange.2)",
-      "light": "soft(yellow.6 0.11 68)",
-      "why": "Types.",
-      "fontStyle": {
-        "dark": "",
-        "light": "italic"
-      }
+      "ardoise": "",
+      "papier": "italic"
     },
-    "typeDeclaration": {
-      "importance": 4,
-      "dark": "soft(orange.1 0.14 62)",
-      "light": "soft(yellow.6 0.11 68)",
-      "why": "Headers of the file: classes, interfaces, types and CSS selectors. Brighter than types in use, bold.",
-      "fontStyle": "bold"
-    },
-    "tag": {
-      "importance": 3,
-      "dark": "soft(special.cyan)",
-      "light": "soft(special.cyan)",
-      "why": "Tags, components, JSON keys."
-    },
-    "property": {
-      "importance": 2,
-      "dark": "soft(gray.1)",
-      "light": "soft(gray.8 0.012 75)",
-      "why": "Members: body text, one step quieter."
-    },
-    "heading1": {
-      "importance": 4,
-      "dark": "soft(blue.1)",
-      "light": "soft(blue.8)",
-      "why": "Markdown H1: the brightest step of the heading blue.",
-      "fontStyle": "bold"
-    },
-    "heading": {
-      "importance": 4,
-      "dark": "soft(blue.2)",
-      "light": "soft(blue.6)",
-      "why": "Markdown H2 and diff ranges.",
-      "fontStyle": "bold"
-    },
-    "heading3": {
-      "importance": 4,
-      "dark": "soft(blue.3)",
-      "light": "soft(blue.5)",
-      "why": "Markdown H3 to H6: the quietest step of the heading blue.",
-      "fontStyle": "bold"
-    },
-    "link": {
-      "importance": 3,
-      "dark": "soft(blue.3)",
-      "light": "soft(blue.5)",
-      "why": "Markdown link text and autolinks: the workbench link blue."
-    },
-    "code": {
-      "importance": 3,
-      "dark": "soft(blue.1)",
-      "light": "soft(blue.7)",
-      "why": "Markdown inline code and fence language: a calm blue, one step under body text."
-    },
-    "invalid": {
-      "importance": 5,
-      "dark": "soft(red.3)",
-      "light": "soft(red.7)",
-      "why": "The only red in code.",
-      "fontStyle": "italic"
-    },
-    "deprecated": {
-      "importance": 5,
-      "dark": "soft(red.2)",
-      "light": "soft(red.7)",
-      "why": "Deprecated code.",
-      "fontStyle": "italic strikethrough"
-    },
-    "inserted": {
-      "importance": 4,
-      "dark": "soft(green.1)",
-      "light": "soft(green.6)",
-      "why": "Diff added."
-    },
-    "deleted": {
-      "importance": 4,
-      "dark": "soft(red.2)",
-      "light": "soft(red.7)",
-      "why": "Diff removed."
-    },
-    "changed": {
-      "importance": 4,
-      "dark": "soft(orange.2)",
-      "light": "soft(yellow.6 0.11 68)",
-      "why": "Diff changed."
-    },
-    "selector": {
-      "importance": 4,
-      "fontStyle": "bold",
-      "dark": "soft(orange.1 0.14 62)",
-      "light": "soft(purple.5)",
-      "why": "CSS selectors head their block: header orange in dark, function plum in light."
-    },
+    "type-declaration": "bold",
+    "heading-1": "bold",
+    "heading-2": "bold",
+    "heading-3": "bold",
+    "invalid": "italic",
+    "deprecated": "italic strikethrough",
+    "selector": "bold",
     "modifier": {
-      "importance": 3,
-      "fontStyle": {
-        "dark": "",
-        "light": "italic"
-      },
-      "dark": "soft(pink.3 0.135 356)",
-      "light": "soft(red.5 0.18 24)",
-      "why": "Declaring words (export, const, class, async): keyword color; italic on paper, control flow stays upright."
+      "ardoise": "",
+      "papier": "italic"
     }
   },
-  "scopes": [
+  "tokenColors": [
     {
-      "role": "variable",
+      "color": "variable",
       "scope": [
         "variable",
         "variable.other",
@@ -201,7 +40,7 @@
       ]
     },
     {
-      "role": "operator",
+      "color": "operator",
       "scope": [
         "keyword.operator",
         "storage.type.function.arrow",
@@ -210,7 +49,7 @@
       ]
     },
     {
-      "role": "punctuation",
+      "color": "punctuation",
       "scope": [
         "punctuation",
         "meta.brace",
@@ -236,11 +75,11 @@
       ]
     },
     {
-      "role": "comment",
+      "color": "comment",
       "scope": ["comment", "string.comment"]
     },
     {
-      "role": "keyword",
+      "color": "keyword",
       "scope": [
         "keyword",
         "keyword.control",
@@ -260,7 +99,7 @@
       ]
     },
     {
-      "role": "modifier",
+      "color": "modifier",
       "scope": [
         "storage.type",
         "storage.modifier",
@@ -272,7 +111,7 @@
       ]
     },
     {
-      "role": "function",
+      "color": "function",
       "scope": [
         "entity.name.function",
         "support.function",
@@ -284,7 +123,7 @@
       ]
     },
     {
-      "role": "functionDeclaration",
+      "color": "function-declaration",
       "scope": [
         "meta.definition.function entity.name.function",
         "meta.definition.method entity.name.function",
@@ -294,7 +133,7 @@
       ]
     },
     {
-      "role": "type",
+      "color": "type",
       "scope": [
         "entity.name.type",
         "entity.other.inherited-class",
@@ -309,7 +148,7 @@
       ]
     },
     {
-      "role": "typeDeclaration",
+      "color": "type-declaration",
       "scope": [
         "entity.name.class",
         "entity.name.type.class",
@@ -324,7 +163,7 @@
       ]
     },
     {
-      "role": "string",
+      "color": "string",
       "scope": [
         "string",
         "punctuation.definition.string",
@@ -337,7 +176,7 @@
       ]
     },
     {
-      "role": "constant",
+      "color": "constant",
       "scope": [
         "constant",
         "constant.numeric",
@@ -355,7 +194,7 @@
       ]
     },
     {
-      "role": "property",
+      "color": "property",
       "scope": [
         "variable.other.property",
         "variable.other.object.property",
@@ -364,11 +203,11 @@
       ]
     },
     {
-      "role": "constant",
+      "color": "constant",
       "scope": ["support.type.property-name", "entity.other.attribute-name", "meta.property-name"]
     },
     {
-      "role": "tag",
+      "color": "tag",
       "scope": [
         "entity.name.tag",
         "support.class.component",
@@ -377,45 +216,45 @@
       ]
     },
     {
-      "role": "heading",
+      "color": "heading-2",
       "scope": ["markup.heading", "markup.heading entity.name", "meta.diff.range", "meta.separator"]
     },
     {
-      "role": "variable",
-      "scope": ["markup.bold"],
-      "fontStyle": "bold"
+      "color": "variable",
+      "fontStyle": "bold",
+      "scope": ["markup.bold"]
     },
     {
-      "role": "variable",
-      "scope": ["markup.italic"],
-      "fontStyle": "italic"
+      "color": "variable",
+      "fontStyle": "italic",
+      "scope": ["markup.italic"]
     },
     {
-      "role": "variable",
-      "scope": ["markup.underline"],
-      "fontStyle": "underline"
+      "color": "variable",
+      "fontStyle": "underline",
+      "scope": ["markup.underline"]
     },
     {
-      "role": "punctuation",
-      "scope": ["markup.strikethrough"],
-      "fontStyle": "strikethrough"
+      "color": "punctuation",
+      "fontStyle": "strikethrough",
+      "scope": ["markup.strikethrough"]
     },
     {
-      "role": "variable",
-      "scope": ["markup.bold markup.italic", "markup.italic markup.bold"],
-      "fontStyle": "bold italic"
+      "color": "variable",
+      "fontStyle": "bold italic",
+      "scope": ["markup.bold markup.italic", "markup.italic markup.bold"]
     },
     {
-      "role": "property",
-      "scope": ["markup.quote"],
-      "fontStyle": "italic"
+      "color": "property",
+      "fontStyle": "italic",
+      "scope": ["markup.quote"]
     },
     {
-      "role": "heading1",
+      "color": "heading-1",
       "scope": ["heading.1.markdown entity.name.section.markdown"]
     },
     {
-      "role": "heading3",
+      "color": "heading-3",
       "scope": [
         "heading.3.markdown entity.name.section.markdown",
         "heading.4.markdown entity.name.section.markdown",
@@ -424,11 +263,11 @@
       ]
     },
     {
-      "role": "code",
+      "color": "code",
       "scope": ["markup.inline.raw.string.markdown", "fenced_code.block.language"]
     },
     {
-      "role": "link",
+      "color": "link",
       "scope": [
         "string.other.link.title.markdown",
         "string.other.link.description.markdown",
@@ -437,7 +276,7 @@
       ]
     },
     {
-      "role": "punctuation",
+      "color": "punctuation",
       "scope": [
         "markup.underline.link.markdown",
         "markup.underline.link.image.markdown",
@@ -446,7 +285,8 @@
       ]
     },
     {
-      "role": "punctuation",
+      "color": "punctuation",
+      "fontStyle": "",
       "scope": [
         "punctuation.definition.heading.markdown",
         "punctuation.definition.bold.markdown",
@@ -472,29 +312,25 @@
         "punctuation.separator.key-value.markdown",
         "markup.heading.setext",
         "meta.separator.markdown"
-      ],
-      "fontStyle": ""
+      ]
     },
     {
-      "role": "inserted",
-      "scope": ["markup.inserted", "meta.diff.header.to-file", "punctuation.definition.inserted"],
-      "background": "green.5/20"
+      "color": "inserted",
+      "background": "inserted-background",
+      "scope": ["markup.inserted", "meta.diff.header.to-file", "punctuation.definition.inserted"]
     },
     {
-      "role": "deleted",
-      "scope": ["markup.deleted", "meta.diff.header.from-file", "punctuation.definition.deleted"],
-      "background": {
-        "dark": "red.9",
-        "light": "red.0"
-      }
+      "color": "deleted",
+      "background": "deleted-background",
+      "scope": ["markup.deleted", "meta.diff.header.from-file", "punctuation.definition.deleted"]
     },
     {
-      "role": "changed",
-      "scope": ["markup.changed", "punctuation.definition.changed"],
-      "background": "yellow.5/20"
+      "color": "changed",
+      "background": "changed-background",
+      "scope": ["markup.changed", "punctuation.definition.changed"]
     },
     {
-      "role": "invalid",
+      "color": "invalid",
       "scope": [
         "invalid",
         "invalid.broken",
@@ -505,16 +341,16 @@
       ]
     },
     {
-      "role": "invalid",
-      "scope": ["carriage-return"],
-      "background": "red.5/40"
+      "color": "invalid",
+      "background": "invalid-background",
+      "scope": ["carriage-return"]
     },
     {
-      "role": "deprecated",
+      "color": "deprecated",
       "scope": ["invalid.deprecated"]
     },
     {
-      "role": "selector",
+      "color": "selector",
       "scope": [
         "meta.selector entity.other.attribute-name",
         "meta.selector entity.name.tag",
@@ -528,7 +364,7 @@
       ]
     }
   ],
-  "semantic": {
+  "semanticTokenColors": {
     "variable": "variable",
     "variable.readonly": "variable",
     "variable.defaultLibrary": "variable",
@@ -543,8 +379,8 @@
     "method": "function",
     "macro": "function",
     "decorator": "function",
-    "function.declaration": "functionDeclaration",
-    "method.declaration": "functionDeclaration",
+    "function.declaration": "function-declaration",
+    "method.declaration": "function-declaration",
     "class": "type",
     "class.defaultLibrary": "type",
     "interface": "type",
@@ -552,11 +388,11 @@
     "typeParameter": "type",
     "enum": "type",
     "struct": "type",
-    "class.declaration": "typeDeclaration",
-    "interface.declaration": "typeDeclaration",
-    "type.declaration": "typeDeclaration",
-    "enum.declaration": "typeDeclaration",
-    "struct.declaration": "typeDeclaration",
+    "class.declaration": "type-declaration",
+    "interface.declaration": "type-declaration",
+    "type.declaration": "type-declaration",
+    "enum.declaration": "type-declaration",
+    "struct.declaration": "type-declaration",
     "string": "string",
     "regexp": "string",
     "number": "constant",

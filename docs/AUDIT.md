@@ -37,8 +37,7 @@ Below the line nothing pulls the eye: grays for 1–2, calm hues for 3. Above it
 
 ## Findings in GitHub Default
 
-What the audit found in the theme Penombre starts from. The full list is in the `findings` field of
-each blueprint.
+What the audit found in the theme Penombre starts from.
 
 ### Syntax
 
@@ -64,7 +63,7 @@ each blueprint.
 
 ### Syntax
 
-| Role                | Level | Hue, dark / light    | Why                                                         |
+| Color               | Level | Hue, dark / light    | Why                                                         |
 | ------------------- | ----- | -------------------- | ----------------------------------------------------------- |
 | variable            | 2     | gray / stone         | Body text.                                                  |
 | operator            | 2     | gray / stone         | Part of the sentence, a step under the body.                |
@@ -106,10 +105,14 @@ Eight landscape photos (Wikimedia Commons featured pictures), measured in OKLCH:
 
 The one added color is `stone` (`#a19c90`, H ≈ 88): paper in light mode.
 
-## GitHub in OKLCH, softened
+## How the colors were derived
 
-Each GitHub Default color keeps its hue. Its chroma is scaled down, and its lightness moves until
-its contrast on the Penombre background equals GitHub's ratio, softened (`src/soften.js`):
+The colors were computed once from GitHub Default, then written out as plain values in
+`colors/ardoise.css` and `colors/papier.css`. Edit those files now; the derivation below no longer
+runs. Its code is in the history: `git show 3b18228:src/soften.js` and `src/palette.js`.
+
+Each GitHub Default color kept its hue. Its chroma was scaled down, and its lightness moved until
+its contrast on the Penombre background equalled GitHub's ratio, softened:
 
 ```
 target = github ratio ** soften      dark 0.85, light 0.86
@@ -118,16 +121,17 @@ fg on bg    16:1  ->  10.6:1
 keyword    7.5:1  ->   5.6:1
 ```
 
-Ratios at or above 4.5 never drop below it. A role can override chroma and hue:
-`soft(pink.3 0.135 356)`. Backgrounds: slate `#21272f` in dark mode, paper `#ece6d8` in light mode.
+Ratios at or above 4.5 never dropped below it. A few colors got their own chroma and hue, like the
+dark keyword pink. Backgrounds: slate `#21272f` in dark mode, paper `#ece6d8` in light mode.
 
 ## Known gaps
 
-- Light comments sit at 3.8:1 on paper (`oklch(0.56 0.016 75)`), under the 4.5:1 floor the other
-  roles keep.
+- Light comments sit at 3.8:1 on paper (`#7a736a`), under the 4.5:1 floor the other code colors
+  keep.
 
-## Blueprints
+## Files
 
-- Syntax roles: `blueprint/syntax.json`
-- Workbench roles: `blueprint/ui.json`
-- `bun run build` prints every syntax role's contrast against the editor.
+- Colors: `colors/ardoise.css`, `colors/papier.css`
+- Where code colors go: `blueprint/syntax.json`
+- Where workbench colors go: `blueprint/ui.json`
+- `bun run build` prints every code color's contrast against the editor.

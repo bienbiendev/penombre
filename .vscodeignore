@@ -1,6 +1,7 @@
 blueprint/**
 preview/**
 src/**
+colors/**
 docs/**
 *.vsix
 .prettierrc

@@ -1,0 +1,115 @@
+/*
+ * Penombre Papier, the light theme: every color it uses.
+ *
+ * Change a value, then run `bun run build`.
+ * blueprint/syntax.json and blueprint/ui.json decide where each color goes.
+ * Colors are oklch(lightness chroma hue):
+ *   lightness  0 black to 1 white
+ *   chroma     0 gray to about 0.2 vivid
+ *   hue        degrees: 25 red, 60 orange, 145 green, 200 cyan, 250 blue, 305 purple, 355 pink
+ *   / 40%      optional opacity
+ * A hex color or var(--another-color) works too.
+ */
+
+:root {
+  /* Code */
+  --variable: oklch(0.305 0.011 67); /* Body text. */
+  --property: oklch(0.37 0.011 78); /* Members: body text, one step quieter. */
+  --operator: oklch(0.427 0.012 73); /* Part of the sentence, a step under the body. */
+  --punctuation: oklch(0.495 0.013 77); /* Scaffolding: present, never read. */
+  --comment: oklch(0.56 0.016 74); /* Comments, set apart by italic. */
+  --keyword: oklch(0.537 0.18 24); /* Pink in dark, brick red on paper; error red stays alone. */
+  --modifier: oklch(0.537 0.18 24); /* Declaring words (export, const, class, async): keyword color; italic on paper, control flow stays upright. */
+  --string: oklch(0.354 0.082 259); /* Literal text: the calm blue. */
+  --constant: oklch(0.462 0.123 258.5); /* Literal values: the stronger blue. */
+  --function: oklch(0.53 0.156 295); /* Functions. */
+  --function-declaration: oklch(0.53 0.156 295); /* Landmark: where a function is defined. */
+  --type: oklch(0.48 0.104 68); /* Types. */
+  --type-declaration: oklch(0.48 0.104 68); /* Headers of the file: classes, interfaces, types and CSS selectors. Brighter than types in use, bold. */
+  --selector: oklch(0.53 0.156 295); /* CSS selectors head their block: header orange in dark, function plum in light. */
+  --tag: oklch(0.507 0.063 203); /* Tags, components, JSON keys. */
+
+  /* Markdown */
+  --heading-1: oklch(0.354 0.082 259); /* Markdown H1: the brightest step of the heading blue. */
+  --heading-2: oklch(0.462 0.123 258.5); /* Markdown H2 and diff ranges. */
+  --heading-3: oklch(0.52 0.143 257.4); /* Markdown H3 to H6: the quietest step of the heading blue. */
+  --link: oklch(0.52 0.143 257.4); /* Markdown link text and autolinks: the workbench link blue. */
+  --code: oklch(0.4 0.107 259); /* Inline code and fence languages, in the editor, previews, hovers and chat. */
+
+  /* Diffs and problems */
+  --inserted: oklch(0.456 0.087 148); /* Diff added. */
+  --inserted-background: oklch(0.524 0.14 148 / 20%); /* Background of added lines. */
+  --deleted: oklch(0.409 0.114 20); /* Diff removed. */
+  --deleted-background: oklch(0.955 0.022 24); /* Background of removed lines. */
+  --changed: oklch(0.48 0.104 68); /* Diff changed. */
+  --changed-background: oklch(0.554 0.1169 75 / 20%); /* Background of changed lines. */
+  --invalid: oklch(0.409 0.114 20); /* The only red in code. */
+  --invalid-background: oklch(0.552 0.205 24.5 / 40%); /* Background of stray carriage returns. */
+  --deprecated: oklch(0.409 0.114 20); /* Deprecated code. */
+
+  /* Surfaces */
+  --surface-editor: oklch(0.926 0.02 88); /* The page you read; everything else steps away from it. */
+  --surface-chrome: oklch(0.91 0.022 90); /* Sidebar, bars, panel, tabs: one step below the editor. */
+  --surface-overlay: oklch(0.944 0.016 86); /* Floating widgets lift one step above the editor. */
+  --surface-input: oklch(0.944 0.016 86); /* Fields read as wells inside chrome and overlays. */
+  --surface-raised: oklch(0.87 0.023 90); /* Secondary buttons and chips, quiet but clickable. */
+  --neutral-wash: oklch(0.55 0.015 87); /* Hover, line highlight, scrollbars: alpha tints, no hue. */
+  --shadow: oklch(0.5 0.01 85); /* Widget and sticky-scroll shadows. */
+
+  /* Borders */
+  --border-subtle: oklch(0.86 0.02 91); /* Layout seams and indent guides, barely visible. */
+  --border-control: oklch(0.79 0.02 88); /* Edges of inputs and controls you can act on. */
+
+  /* Text */
+  --fg-strong: oklch(0.323 0.012 78); /* Peak contrast: active tab, focused item, headers. */
+  --fg-text: oklch(0.305 0.011 67); /* Editor and input text. */
+  --fg-chrome: oklch(0.37 0.011 78); /* Sidebar, list and panel text, one step under body. */
+  --fg-muted: oklch(0.516 0.011 73); /* Status bar, inactive tabs, descriptions, icons. */
+  --fg-subtle: oklch(0.61 0.012 68); /* Inactive line numbers, placeholders, inlay hints. */
+  --fg-faint: oklch(0.718 0.012 77); /* Whitespace and ignored files. */
+  --fg-on-accent: oklch(1 0 0); /* Text on solid accent fills. */
+
+  /* Accent: focus, selection, links */
+  --accent-fg: oklch(0.52 0.143 257.4); /* Cursor, links, matched characters, focused icons. */
+  --accent-emphasis: oklch(0.5 0.11 257.6); /* Focus ring, active markers, primary button, progress. */
+  --accent-emphasis-hover: oklch(0.45 0.109 258); /* Primary button hover; white stays above 6:1. */
+  --accent-selection: oklch(0.72 0.07 248); /* Selection everywhere, used as alpha tint. */
+  --accent-muted: oklch(0.95 0.025 229); /* Badge fill: blue but calm. */
+
+  /* Find */
+  --find-current: oklch(0.84 0.1 92); /* Current find match, solid with a bright edge. */
+  --find-match: oklch(0.82 0.12 91); /* Other matches as tint; edge of the current one. */
+
+  /* Diagnostics */
+  --error: oklch(0.534 0.154 24); /* Errors, conflicts, breakpoints: the only red alarm. */
+  --warning: oklch(0.518 0.0874 74); /* Warnings only; yellow means nothing else but find. */
+  --info: oklch(0.507 0.063 203); /* Info diagnostics and hints, own calm hue. */
+
+  /* Source control */
+  --git-added: oklch(0.503 0.104 148); /* Added and untracked; the only green in the UI. */
+  --git-modified: oklch(0.527 0.119 45); /* Modified files and gutter; orange means only this. */
+  --git-deleted: oklch(0.534 0.154 24); /* Deleted lines and files, softer than error red. */
+
+  /* Terminal */
+  --ansi-black: oklch(0.323 0.012 78); /* Terminal black. */
+  --ansi-red: oklch(0.534 0.154 24); /* Terminal red. */
+  --ansi-green: oklch(0.456 0.087 148); /* Terminal green. */
+  --ansi-yellow: oklch(0.363 0.054 67); /* Terminal yellow, readable on light. */
+  --ansi-blue: oklch(0.52 0.143 257.4); /* Terminal blue. */
+  --ansi-magenta: oklch(0.53 0.156 295); /* Terminal magenta; also callable symbols and brackets. */
+  --ansi-cyan: oklch(0.507 0.063 203); /* Terminal cyan; also type symbols and brackets. */
+  --ansi-white: oklch(0.516 0.011 73); /* Terminal white. */
+  --ansi-bright-black: oklch(0.495 0.013 77); /* Terminal bright black. */
+  --ansi-bright-red: oklch(0.47 0.133 22); /* Terminal bright red. */
+  --ansi-bright-green: oklch(0.503 0.104 148); /* Terminal bright green. */
+  --ansi-bright-yellow: oklch(0.415 0.063 69); /* Terminal bright yellow. */
+  --ansi-bright-blue: oklch(0.584 0.1466 255); /* Terminal bright blue. */
+  --ansi-bright-magenta: oklch(0.608 0.144 297); /* Terminal bright magenta. */
+  --ansi-bright-cyan: oklch(0.562 0.071 219); /* Terminal bright cyan. */
+  --ansi-bright-white: oklch(0.61 0.012 68); /* Terminal bright white, not pure white. */
+
+  /* Bracket pairs */
+  --bracket-1: oklch(0.5 0.07 258); /* Bracket pairs: told apart by hue, quiet as punctuation. */
+  --bracket-2: oklch(0.5 0.071 294); /* Bracket pairs: told apart by hue, quiet as punctuation. */
+  --bracket-3: oklch(0.5 0.07 203); /* Bracket pairs: told apart by hue, quiet as punctuation. */
+}

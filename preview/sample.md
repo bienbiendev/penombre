@@ -1,6 +1,6 @@
 # Penombre
 
-A **low-glare** theme with _calm_ syntax. See [the palette](../src/palette.js).
+A **low-glare** theme with _calm_ syntax. See [the colors](../colors/ardoise.css).
 
 ## Rules
 
